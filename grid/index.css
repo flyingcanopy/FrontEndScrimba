@@ -1,0 +1,21 @@
+.grid {
+    display: grid;
+    grid-template-columns: 200px 200px 350px;
+    grid-template-rows: 50px 200px;
+    background-color: black;
+    
+  }
+  
+  .grid-item {
+    background: #B823C1;
+    color: white;
+    padding: 1em 2em;
+    border: 2px solid purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column-start: 3;
+    grid-column-end:4;
+    grid-row-start:1 ;
+    grid-row-end: 2;
+  }
