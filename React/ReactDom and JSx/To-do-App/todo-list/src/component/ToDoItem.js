@@ -9,7 +9,7 @@ function ToDoItem(props) {
     console.log(todoItem)
     return (
         <div className="todo-item">
-            <input type="checkbox" />
+            <input type="checkbox" checked={todoItem.completed}/>
             <p>{todoItem.text}</p>
         </div>
     )
