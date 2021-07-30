@@ -12,7 +12,10 @@ import products from "./vschoolProducts";
 import Product from "./Product";
 
 function App() {
-  return products.map((product) => <Product key={product.id} product={product} />);
+  const productComponents = products.map((product) => (
+    <Product key={product.id} product={product} />
+  ));
+  return <div>{productComponents}</div>;
 }
 
 export default App;
