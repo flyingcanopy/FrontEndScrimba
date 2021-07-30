@@ -1,5 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+//import MyInfo  from './MyInfo';
+import GetData from './MyInfo'
+import { MyInfo } from './MyInfo';
 import './index.css';
 // function MyName(){
 //     return (
@@ -35,28 +38,34 @@ import './index.css';
 // 3. Render an instance of that functional component to the browser
 // Extra challenge: learn on your own (Google!) how you can add some style to your page.
 // (We will also cover this in an upcoming lesson).
-function MyInfo(){
-    return (
-        <div class="bio-data">
-            <h1>
-                Bhuvan
-            </h1>
-            <p>
-                Freelance contractor
-            </p>
-            <ul>
-                <li>
-                    Gokarna 
-                </li>
-                <li>
-                    Kumta   
-                </li>
-                <li>
-                    Chikmagluru
-                </li>
-            </ul>
-        </div>
-    )
-}
 
-ReactDom.render(<MyInfo/>,document.getElementById("root"))
+
+
+// function MyInfo(){
+//     return (
+//         <div class="bio-data">
+//             <h1>
+//                 Bhuvan
+//             </h1>
+//             <p>
+//                 Freelance contractor
+//             </p>
+//             <ul>
+//                 <li>
+//                     Gokarna 
+//                 </li>
+//                 <li>
+//                     Kumta   
+//                 </li>
+//                 <li>
+//                     Chikmagluru
+//                 </li>
+//             </ul>
+//         </div>
+//     )
+// }
+
+ //ReactDom.render(<MyInfo/>,document.getElementById("root"))
+ ReactDom.render(<GetData/>,document.getElementById("root"))
+ ReactDom.render(<MyInfo/>,document.getElementById("root"))
+
