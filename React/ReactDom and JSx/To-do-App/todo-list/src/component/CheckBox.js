@@ -2,7 +2,7 @@ import React from "react";
 
 function CheckBox() {
   return (
-    <form>
+    <form className="form-box" >
       <input type="checkbox" id="vehicle1" name="vehicle1" value="laundry" />
       <label for="vehicle1"> Do the laundry</label>
       <br />
