@@ -1,12 +1,18 @@
-import React from "react";
-
+import React from "react"
+// {
+//   id: 1,
+//   text: "Take out the trash",
+//   completed: true
+// }
 function ToDoItem(props) {
-
-  return (
-    <div className='todo-item'>
-      <input type="checkbox" />
-      <label for={props.name}> Do the {props.name}</label>
-    </div>
-  );
+    let todoItem = props.todoItem
+    console.log(todoItem)
+    return (
+        <div className="todo-item">
+            <input type="checkbox" />
+            <p>{todoItem.text}</p>
+        </div>
+    )
 }
+
 export default ToDoItem
