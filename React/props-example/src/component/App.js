@@ -16,12 +16,12 @@ import Joke from './Joke';
 function App() {
   let jokes = []
   for(let count=1;count<=5;count++){
-    const joke = {
-      question: `Question ${count}`,
-      punchline: `Punchline ${count}`
-    }
-    jokes.push(<Joke joke={joke}/>)
+    let questionString = 'Question'+count
+    let punchlineString = 'punchline'+count
+    jokes.push(<Joke question={questionString} punchline = {punchlineString}/>)
   }
+  jokes.push(<Joke  punchline = {"punchline 6"}/>)
+  jokes.push(<Joke  question = {"question 7"}/>)
   return (
     jokes
   );
