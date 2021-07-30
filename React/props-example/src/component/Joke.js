@@ -2,32 +2,22 @@ import React from "react";
 
 function Joke(props) {
   console.log(props);
-  if (props.question && props.punchline) {
+  
+    const h1Style = {
+        display: props.question ?  "block" : "none",
+    }
+    const h2Style = {
+        display: props.punchline ?  "block" : "none",
+    }
     return (
       <div>
-        <h1> Question:{props.question}</h1>
+        <h1 style={h1Style}> Question:{props.question}</h1>
 
-        <h2> Answer: {props.punchline}</h2>
+        <h2 style={h2Style}> Answer: {props.punchline}</h2>
         <hr/>
       </div>
     );
-  }else if(props.question){
-      return  (
-        <div>
-          <h1> Question: {props.question}</h1>
-          <hr/>
-        </div>
-      );
-  }else if(props.punchline){
-      return  (
-        <div>  
-          <h2> Answer: {props.punchline}</h2>
-          <hr/>
-        </div>
-      );
-  }else{
-      return (<div></div>)
-  }
+  
 }
 
 export default Joke;
