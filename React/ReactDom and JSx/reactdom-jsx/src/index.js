@@ -1,9 +1,62 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react'
+import ReactDom from 'react-dom'
+import './index.css';
+// function MyName(){
+//     return (
+//         <li>Kaka jugal</li>
+//     )
+// }
+// function MyUnorderedList(){
+//     return (<ul>
+//     <MyName />
+//     <li>
+//         Google
+//     </li>
+//     <li>
+//         Senior software engineer
+//     </li>
+    
+// </ul>)
+// }
+// // The JSX
+// ReactDOM.render(<MyUnorderedList />, document.getElementById("root"))
 
-// The JSX
-ReactDOM.render(<div><h1>Hello world! This is my first react program</h1><p>This is a paragraph</p></div>, document.getElementById("root"))
+// // The old way 
+// var myNewP = document.createElement("p")
+// myNewP.innerHTML = "This is a paragraph."
 
-// The old way 
-var myNewP = document.createElement("p")
-myNewP.innerHTML = "This is a paragraph."
+
+// Objectives:
+// 1. Set up the basic React code from scratch
+// 2. Create a functional component called MyInfo that returns the following UI:
+    // a. An h1 with your name
+    // b. A paragraph with a little blurb about yourself
+    // c. An ordered or unordered list of the top 3 vacation spots you'd like to visit
+// 3. Render an instance of that functional component to the browser
+// Extra challenge: learn on your own (Google!) how you can add some style to your page.
+// (We will also cover this in an upcoming lesson).
+function MyInfo(){
+    return (
+        <div class="bio-data">
+            <h1>
+                Bhuvan
+            </h1>
+            <p>
+                Freelance contractor
+            </p>
+            <ul>
+                <li>
+                    Gokarna 
+                </li>
+                <li>
+                    Kumta   
+                </li>
+                <li>
+                    Chikmagluru
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+ReactDom.render(<MyInfo/>,document.getElementById("root"))
