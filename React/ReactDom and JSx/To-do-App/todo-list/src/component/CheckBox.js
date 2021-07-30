@@ -1,9 +1,23 @@
 import React from "react";
 
 function CheckBox() {
-    let arr = ['laundry','chores','work']
-    return (
-    <form className="form-box" >
+  let arr = ["laundry", "chores", "work"];
+  // jsx takes styles object .. Inline
+  // dont give it a string.. 
+  let formStyle = {
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "orange",
+    color: "whitesmoke",
+    marginBottom: 15,
+    textAlign: "center",
+    fontSize: 30,
+    justifyContent: "center",
+    alignItems: "center",
+  }
+
+  return (
+    <form style={formStyle}>
       <input type="checkbox" id="vehicle1" name="vehicle1" value="laundry" />
       <label for="vehicle1"> Do the {arr[0]}</label>
       <br />
