@@ -67,5 +67,5 @@ import './index.css';
 
  //ReactDom.render(<MyInfo/>,document.getElementById("root"))
  ReactDom.render(<GetData/>,document.getElementById("root"))
- ReactDom.render(<MyInfo/>,document.getElementById("root"))
+ //ReactDom.render(<MyInfo/>,document.getElementById("root"))
 
