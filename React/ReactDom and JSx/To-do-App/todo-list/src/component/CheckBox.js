@@ -3,7 +3,7 @@ import React from "react";
 function CheckBox() {
   let arr = ["laundry", "chores", "work"];
   // jsx takes styles object .. Inline
-  // dont give it a string.. 
+  // dont give it a string..
   let formStyle = {
     display: "flex",
     flexDirection: "column",
@@ -14,8 +14,17 @@ function CheckBox() {
     fontSize: 30,
     justifyContent: "center",
     alignItems: "center",
-  }
+  };
+  const date = new Date(2018, 6, 31, 15);
+  const hours = date.getHours();
 
+  if (hours < 12) {
+    formStyle.color = "#04756F";
+  } else if (hours >= 12 && hours < 17) {
+    formStyle.color = "#8914A3";
+  } else {
+    formStyle.color = "#D90000";
+  }
   return (
     <form style={formStyle}>
       <input type="checkbox" id="vehicle1" name="vehicle1" value="laundry" />
