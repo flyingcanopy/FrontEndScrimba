@@ -16,13 +16,30 @@ import React from "react";
 // }
 
 class TodoItem extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   render() {
     let todoItem = this.props.todoItem;
+    this.state = {
+      todoItem: this.props.todoItem,
+    };
+    let count=0
+    setInterval(() => {
+        
+      this.state.todoItem = {
+        text: "ZZZ"+count++,
+        completed: true,
+      }
+      console.log(this.state.todoItem)
+    }, 1000);
+
     console.log(todoItem);
     return (
       <div className="todo-item">
-        <input type="checkbox" checked={todoItem.completed} />
-        <p>{todoItem.text}</p>
+        <input type="checkbox" checked={this.state.todoItem.completed} />
+        <p>{this.state.todoItem.text}</p>
       </div>
     );
   }

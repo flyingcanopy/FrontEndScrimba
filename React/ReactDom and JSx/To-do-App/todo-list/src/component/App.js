@@ -20,7 +20,7 @@ import todosData from "./todosData";
 //   );
 // }
 class App extends React.Component {
-  render(){
+  render() {
     return (
       <div className="todo-list">
         {todosData.map((todoItem) => {
