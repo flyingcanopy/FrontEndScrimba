@@ -5,30 +5,28 @@ import React from "react"
 // (true if logged in, false if not)
 // Then, give your best shot at rendering the word "in" if the user is logged in
 // or "out" if the user is logged out.
+
 class App extends React.Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
-            isLoggedIn : false
+            isLoggedIn: false
         }
     }
-    render(){
-        let inStyle = {
-            display: this.state.isLoggedIn ? "in-line" : "none"
-            
+    
+    render() {
+        let wordDisplay
+        if (this.state.isLoggedIn === true) {
+            wordDisplay = "in"
+        } else {
+            wordDisplay = "out"
         }
-        let outStyle = {
-              display: !this.state.isLoggedIn ? "in-line" : "none"
-        }
-        
-          return (
-        <div>
-            <h1>You are currently logged (<span style={inStyle}>in</span><span style= {outStyle}>out</span>)</h1>
-        </div>
-    )
-        
+        return (
+            <div>
+                <h1>You are currently logged {wordDisplay}</h1>
+            </div>
+        )
     }
 }
-
 
 export default App
