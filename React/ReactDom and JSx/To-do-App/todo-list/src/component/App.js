@@ -31,9 +31,7 @@ class App extends React.Component {
     this.setState((prevState) => {
       const newTodoList = prevState.todos.map((todoItem) => {
         let item = {
-          id: todoItem.id,
-          text: todoItem.text,
-          completed: todoItem.completed,
+          ...todoItem,
         };
 
         if (item.id === id) {
@@ -52,7 +50,7 @@ class App extends React.Component {
       <TodoItem key={item.id} item={item} method={this.handleChange} />
     ));
 
-    return <div className="todo-list">{todoItems}</div>;
+    return <div className="todo-list"> {todoItems}</div>;
   }
 }
 
