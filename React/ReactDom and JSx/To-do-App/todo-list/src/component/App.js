@@ -10,14 +10,25 @@ import React from "react";
 import TodoItem from "./ToDoItem";
 import todosData from "./todosData";
 
-function App() {
-  return (
-    <div className="todo-list">
-      {todosData.map((todoItem) => {
-        return <TodoItem key={todoItem.id} todoItem={todoItem} />;
-      })}
-    </div>
-  );
+// function App() {
+//   return (
+//     <div className="todo-list">
+//       {todosData.map((todoItem) => {
+//         return <TodoItem key={todoItem.id} todoItem={todoItem} />;
+//       })}
+//     </div>
+//   );
+// }
+class App extends React.Component {
+  render(){
+    return (
+      <div className="todo-list">
+        {todosData.map((todoItem) => {
+          return <TodoItem key={todoItem.id} todoItem={todoItem} />;
+        })}
+      </div>
+    );
+  }
 }
 
 export default App;
