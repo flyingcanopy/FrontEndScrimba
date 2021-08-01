@@ -1,25 +1,26 @@
-import React from "react"
+/**
+ * Challenge: Style the completed todo items differently from the incomplete items.
+ */
 
-function TodoItem(props) {
-    let paragraphStyle = {
-        textDecoration: props.item.completed ?  'line-through blue' : 'none' 
-    }
-    console.log(props.method)
+ import React from "react"
 
-  
-    return (
-       
-        <div className="todo-item">
-            <input 
-                type="checkbox" 
-                checked={props.item.completed} 
-                onChange={()=>{
-                    props.method(props.item.id)
-                }}
-            />
-            <p style={paragraphStyle}>{props.item.text}</p>
-        </div>
-    )
-}
-
-export default TodoItem
+ function TodoItem(props) {
+     const completedStyle = {
+         fontStyle: "italic",
+         color: "#cdcdcd",
+         textDecoration: "line-through"
+     }
+     
+     return (
+         <div className="todo-item">
+             <input 
+                 type="checkbox" 
+                 checked={props.item.completed} 
+                 onChange={() => props.handleChange(props.item.id)}
+             />
+             <p style={props.item.completed ? completedStyle: null}>{props.item.text}</p>
+         </div>
+     )
+ }
+ 
+ export default TodoItem
