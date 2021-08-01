@@ -10,48 +10,49 @@
  * 3. In the TodoItem component, make it so when the `onChange` event happens, it calls the `handleChange` method and passes the id of the todo into the function
  */
 
-import React from "react";
-import TodoItem from "./ToDoItem";
-import todosData from "./todosData";
-
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      todos: todosData,
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(id) {
-    // Update state so that the item with the given id flips `completed` from false to true (or vise versa)
-    // Remember not to modify prevState directly, but instead to return a new version of state with the change you want included in that update. (Think how you might use the `.map` method to do this)
-    console.log(id);
-
-    this.setState((prevState) => {
-      const newTodoList = prevState.todos.map((todoItem) => {
-        let item = {
-          ...todoItem,
-        };
-
-        if (item.id === id) {
-          item.completed = !item.completed;
-        }
-        return item;
-      });
-      return {
-        todos: newTodoList,
-      };
-    });
-  }
-
-  render() {
-    const todoItems = this.state.todos.map((item) => (
-      <TodoItem key={item.id} item={item} method={this.handleChange} />
-    ));
-
-    return <div className="todo-list"> {todoItems}</div>;
-  }
-}
-
-export default App;
+ import React from "react";
+ import TodoItem from "./ToDoItem";
+ import todosData from "./todosData";
+ 
+ class App extends React.Component {
+   constructor() {
+     super();
+     this.state = {
+       todos: todosData,
+     };
+     this.handleChange = this.handleChange.bind(this);
+   }
+ 
+   handleChange(id) {
+     // Update state so that the item with the given id flips `completed` from false to true (or vise versa)
+     // Remember not to modify prevState directly, but instead to return a new version of state with the change you want included in that update. (Think how you might use the `.map` method to do this)
+     console.log(id);
+ 
+     this.setState((prevState) => {
+       const newTodoList = prevState.todos.map((todoItem) => {
+         let item = {
+           ...todoItem,
+         };
+ 
+         if (item.id === id) {
+           item.completed = !item.completed;
+         }
+         return item;
+       });
+       return {
+         todos: newTodoList,
+       };
+     });
+   }
+ 
+   render() {
+     const todoItems = this.state.todos.map((item) => (
+       <TodoItem key={item.id} item={item} method={this.handleChange} />
+     ));
+ 
+     return <div className="todo-list"> {todoItems}</div>;
+   }
+ }
+ 
+ export default App;
+ 
