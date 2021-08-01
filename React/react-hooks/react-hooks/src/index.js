@@ -1,5 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App"
+import UseEffect from "./UseEffect"
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(<UseEffect />, document.getElementById("root"))
