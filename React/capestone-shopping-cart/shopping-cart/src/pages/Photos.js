@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { context } from "../components/ContextProvider"
+import { Context } from "../components/ContextProvider"
 
 
 import Image from "../components/Image"
@@ -14,10 +14,10 @@ function Photos() {
     // Get the allPhotos array from context
     // map over it, creating <Image /> elements of the component we just made
     // <Image key={???} img={<full image object here>} className={getClass(<index of image>)} />
-    const {photos}  =  useContext(context)
+    const {photos,toggleFavorite}  =  useContext(Context)
     console.log(photos)
     const myPhotos = photos.map((photo,i)=>{
-        return <Image key={photo.id} img={photo} className={getClass(i)}/>
+        return <Image key={photo.id} toggleFavorite={toggleFavorite} img={photo} className={getClass(i)}/>
     })
    // console.log("in photos " + photos[0].url)
     return (

@@ -1,9 +1,45 @@
 import React, { useEffect, useState } from "react";
+/*
+1. Add a toggleFavorite method to context. It should take an `id` parameter and update the array of allPhotos by flipping the `isFavorited` property of the photo with the matching `id`
+    a. Have this function also console.log something so we know it's running correctly
+    b. Don't try to modify the individual image object only. Make sure to provide a whole new array to context with the one item with the matching `id` being changed.
+2. Make it so clicking the heart icon on any given image runs this method
+*/
+/*
+Setup context to manage items in an array called `cartItems`. This will be an array of image objects.
 
-const context = React.createContext();
+1. Add the `cartItems` state to context. (Array)
+2. Add function to add an image to the cart. (Takes the full image object as parameter)
+3. Make it so clicking the plus icon on the image adds the item to the cart. (Console.log the cart items array to see that it's working)
+*/
+const Context = React.createContext();
 
 function ContextProvider(props) {
   const [photos, setPhotos] = useState([]);
+  const [cartItems,setCartItems] = useState([])
+  const toggleFavorite = (id)=>{
+      console.log("in toggleFav" +id)
+      setPhotos((prevPhotos)=>{
+            return  prevPhotos.map((photo)=>{
+                if(photo.id===id){
+                    console.log(photo.isFavorite)
+                    console.log(!photo.isFavorite)
+                    return {
+                        ...photo,
+                        isFavorite:!photo.isFavorite
+                    }
+                }
+
+                return photo
+            })
+      })
+
+  }
+  const addFavImage = (img)=>{
+      setCartItems([...cartItems,img])
+      console.log(cartItems)
+  }
+  
   useEffect(()=>{
     console.log("in use effect ")
     fetch('https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json')
@@ -14,7 +50,7 @@ function ContextProvider(props) {
     })
   },[])
   console.log("render"+photos)
-  return <context.Provider value={{photos}}>{props.children}</context.Provider>;
+  return <Context.Provider value={{photos,toggleFavorite,cartItems,addFavImage}}>{props.children}</Context.Provider>;
 }
 
-export { ContextProvider, context };
+export { ContextProvider, Context };
