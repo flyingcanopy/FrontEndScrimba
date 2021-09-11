@@ -48,6 +48,9 @@ function ContextProvider(props) {
       })
 
   }
+  const clearCart = ()=>{
+      setCartItems([])
+  }
   const isPresentCart = (id) => {
       console.log("ispresent")
       return cartItems.some((img)=> img.id===id)
@@ -78,7 +81,7 @@ function ContextProvider(props) {
     })
   },[])
   console.log("render"+photos)
-  return <Context.Provider value={{photos,toggleFavorite,cartItems,addFavImage,isPresentCart,removeImage}}>{props.children}</Context.Provider>;
+  return <Context.Provider value={{photos,toggleFavorite,cartItems,addFavImage,isPresentCart,removeImage,clearCart}}>{props.children}</Context.Provider>;
 }
 
 export { ContextProvider, Context };
