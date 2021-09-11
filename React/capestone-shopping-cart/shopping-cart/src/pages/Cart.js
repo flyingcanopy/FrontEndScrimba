@@ -16,15 +16,15 @@ function Cart() {
             {cartItemElements}
             <p className="total-cost">Total:{totalPrice.toLocaleString("en-US", {style: "currency", currency: "INR"})} </p>
             <div className="order-button">
-                <button onClick={()=>{
+            {cartItems.length>0 ? <button onClick={()=>{
                     setOrderPlaced(true)
-                    setTimeout(()=>{
+                    setTimeout(()=>{      
                         console.log("order placed")
                         setOrderPlaced(false)
                         clearCart()
                     },3000)
 
-                }}>{!orderPlaced&&"Place Order"}{orderPlaced&&"Loading..."}</button>
+                }}>{!orderPlaced&&"Place Order"}{orderPlaced&&"Loading..."}</button>: <p>You have no items in your cart.</p>}
             </div>
         </main>
     )
