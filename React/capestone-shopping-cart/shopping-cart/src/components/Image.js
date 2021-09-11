@@ -2,22 +2,15 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { Context } from "./ContextProvider";
+import useHover from "../hooks/useHover";
 function Image({ className, img }) {
-  const [hovered, setHovered] = useState(false);
+  const [hovered, ref] = useHover(false);
   const { toggleFavorite } = useContext(Context);
   const { addFavImage } = useContext(Context);
   const {isPresentCart} = useContext(Context)
-  console.log(img.isFavorite);
   return (
-    <div
-      onMouseLeave={() => {
-        console.log("mouse hover leave");
-        setHovered(false);
-      }}
-      onMouseOver={() => {
-        console.log("mouse hover enter");
-        setHovered(true);
-      }}
+    <div ref={ref}
+     
       className={`${className} image-container`}
     >
       {hovered && !img.isFavorite && (

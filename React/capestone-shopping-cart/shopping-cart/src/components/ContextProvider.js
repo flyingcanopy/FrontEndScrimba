@@ -52,7 +52,6 @@ function ContextProvider(props) {
       setCartItems([])
   }
   const isPresentCart = (id) => {
-      console.log("ispresent")
       return cartItems.some((img)=> img.id===id)
 
   }
@@ -67,12 +66,9 @@ function ContextProvider(props) {
       else{
         removeImage(img.id)
       }
-
-      console.log(cartItems)
   }
   
   useEffect(()=>{
-    console.log("in use effect ")
     fetch('https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json')
     .then(response => response.json())
     .then(data => {
@@ -80,7 +76,6 @@ function ContextProvider(props) {
        setPhotos(data)
     })
   },[])
-  console.log("render"+photos)
   return <Context.Provider value={{photos,toggleFavorite,cartItems,addFavImage,isPresentCart,removeImage,clearCart}}>{props.children}</Context.Provider>;
 }
 
