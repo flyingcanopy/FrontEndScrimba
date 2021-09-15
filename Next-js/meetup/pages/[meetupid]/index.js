@@ -24,6 +24,7 @@ export async function getStaticPaths() {
       params: {
         meetupid: meetup._id.toString(),
       },
+      revalidate: 10
     }
   })
   console.log(pathArray);
