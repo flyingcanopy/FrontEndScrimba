@@ -29,7 +29,7 @@ export async function getStaticPaths() {
   console.log(pathArray);
   client.close();
   return {
-    fallback: false, // return 404 if page does not exist..
+    fallback: 'blocking', // incase the page does not exist pre-generate that page
     paths:pathArray,
   };
 }
