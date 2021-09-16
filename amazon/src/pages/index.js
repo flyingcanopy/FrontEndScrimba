@@ -10,6 +10,10 @@ export default function Home() {
       </Head>
       {/* Header component Sticks to the top */}
       <Header/>
+      <main>
+        {/* Banner */}
+        {/* Product Feed */}
+      </main>
     </div>
   );
 }
