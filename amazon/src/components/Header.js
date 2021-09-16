@@ -7,11 +7,11 @@ import {
 
 function AddEffect(props) {
   return (
-    <div class="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-      <div class="grid gap-8 items-start justify-center w-screen">
-        <div class="relative group w-screen">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-700 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-          <div class="relative px-7 py-4 bg-amazon_blue rounded-lg leading-none flex items-center divide-x divide-gray-600">
+    <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
+      <div className="grid gap-8 items-start justify-center w-screen">
+        <div className="relative group w-screen">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-yellow-900 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+          <div className="relative px-7 py-4 bg-amazon_blue rounded-lg leading-none flex items-center divide-x divide-gray-600">
             {props.children}
           </div>
         </div>
