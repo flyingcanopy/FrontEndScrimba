@@ -23,9 +23,9 @@ function Header() {
   return (
     <header>
       <AddEffect>
-        <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
+        <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2 w-screen" >
           {/* top nav */}
-          <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+          <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 w-screen">
             {/* image amazon logo */}
             <Image
               src="https://www.freepnglogos.com/uploads/ice-png/ice-cube-transparent-vector-graphic-pixabay-36.png"
