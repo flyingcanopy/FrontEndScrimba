@@ -1,5 +1,5 @@
 module.exports = {
     images : {
-        domains:['www.freepnglogos.com']
+        domains:['links.papareact.com','www.freepnglogos.com']
     }
 }
