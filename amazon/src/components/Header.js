@@ -5,8 +5,14 @@ import {
     ShoppingCartIcon,
 } from "@heroicons/react/outline"
 import {signIn,signOut,useSession} from "next-auth/client"
+import { useRouter } from 'next/dist/client/router'
+import { selectItems } from '../slices/basketSlice'
+import { useSelector } from 'react-redux'
+
 function Header() {
-    const [session,loading] = useSession()
+    const [session] = useSession()
+    const router = useRouter()
+    const items = useSelector(selectItems)
      
     return (
         <header>
@@ -14,7 +20,9 @@ function Header() {
             {/* top nav */}
             <div className='mt-2 flex items-center flex-grow sm:flex-grow-0'>
                 {/* image amazon logo */}
-                <Image src='https://www.freepnglogos.com/uploads/ice-png/ice-cube-transparent-vector-graphic-pixabay-36.png'
+                <Image onClick={()=>{
+                    router.push('/')
+                }} src='https://www.freepnglogos.com/uploads/ice-png/ice-cube-transparent-vector-graphic-pixabay-36.png'
                 width={150}
                 height={40}
                 objectFit ='contain'
@@ -39,8 +47,8 @@ function Header() {
                 
 
                 </div> 
-                <div className=" relative link flex items-center">
-                <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">0</span>
+                <div onClick={()=>router.push('/checkout')}className=" relative link flex items-center">
+                <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">{items.length}</span>
                 <ShoppingCartIcon className="h-10"/>
                 <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>
 
