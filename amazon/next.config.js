@@ -11,6 +11,9 @@ module.exports = {
     }
     return config;
   },
+  env:{
+    stripe_public_key: process.env.STRIPE_PUBLIC_KEY
+  },
     images : {
         domains:['links.papareact.com','www.freepnglogos.com','fakestoreapi.com']
     }
